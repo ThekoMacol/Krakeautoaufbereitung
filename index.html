@@ -397,14 +397,15 @@
     }
 
     /* Contact Form Card */
-    .form-card { padding: 36px; }
-    .form-card h3 { color: var(--blue); margin-bottom: 24px; }
+    .form-card { padding: 28px; }
+    .form-card h3 { color: var(--blue); margin-bottom: 20px; }
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
     }
     @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+    @media (max-width: 480px) { .form-card { padding: 20px; } }
     .form-group { margin-bottom: 18px; }
     .form-group label {
       display: block;
@@ -418,7 +419,7 @@
     .form-group textarea,
     .form-group select {
       width: 100%;
-      padding: 11px 14px;
+      padding: 10px 13px;
       border: 1.5px solid var(--border);
       border-radius: var(--radius-sm);
       font-family: 'Inter', sans-serif;
@@ -426,6 +427,13 @@
       color: var(--text);
       background: var(--bg);
       transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    @media (max-width: 560px) {
+      .form-group input,
+      .form-group textarea,
+      .form-group select { font-size: 16px; /* prevent iOS zoom */ padding: 10px 12px; }
+      .form-group { margin-bottom: 12px; }
+      .form-group label { font-size: .8rem; }
     }
     .form-group input:focus,
     .form-group textarea:focus,
@@ -498,8 +506,8 @@
       border-radius: var(--radius);
       box-shadow: 0 24px 60px rgba(30,58,138,.25);
       width: 100%;
-      max-width: 560px;
-      max-height: 90vh;
+      max-width: 520px;
+      max-height: 92vh;
       overflow-y: auto;
       transform: translateY(20px) scale(.98);
       transition: transform .3s ease;
@@ -510,31 +518,53 @@
     }
     .modal__header {
       background: linear-gradient(135deg, var(--blue), var(--blue-dark));
-      padding: 24px 28px;
+      padding: 18px 20px;
       border-radius: var(--radius) var(--radius) 0 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1;
     }
-    .modal__header h3 { color: var(--yellow); font-size: 1.2rem; margin: 0; }
+    .modal__header h3 { color: var(--yellow); font-size: 1rem; margin: 0; }
     .modal__close {
       background: rgba(255,255,255,.15);
       border: none;
       border-radius: 50%;
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       color: var(--white);
-      font-size: 1rem;
+      font-size: .95rem;
       transition: background var(--transition);
       flex-shrink: 0;
     }
     .modal__close:hover { background: rgba(255,255,255,.3); }
-    .modal__body { padding: 28px; }
-    .modal__body .form-group { margin-bottom: 16px; }
+    .modal__body { padding: 20px; }
+    .modal__body .form-group { margin-bottom: 14px; }
+
+    /* Mobile: bottom-sheet */
+    @media (max-width: 560px) {
+      .modal-overlay {
+        align-items: flex-end;
+        padding: 0;
+      }
+      .modal {
+        border-radius: var(--radius) var(--radius) 0 0;
+        max-height: 94vh;
+        transform: translateY(100%);
+      }
+      .modal-overlay.active .modal {
+        transform: translateY(0);
+      }
+      .modal__header {
+        border-radius: var(--radius) var(--radius) 0 0;
+      }
+    }
 
     /* ── Impressum / Datenschutz Modals ──────────────── */
     .legal-modal {
@@ -876,20 +906,8 @@
           <input type="email" id="m-email" name="email" placeholder="max@beispiel.de" required>
         </div>
         <div class="form-group">
-          <label for="m-service">Gewünschte Leistung</label>
-          <select id="m-service" name="service">
-            <option value="">– Bitte wählen –</option>
-            <option>Außenaufbereitung</option>
-            <option>Innenreinigung</option>
-            <option>Autoglas Service</option>
-            <option>Lackreparatur</option>
-            <option>Komplettaufbereitung</option>
-            <option>Sonstiges / Beratung</option>
-          </select>
-        </div>
-        <div class="form-group">
           <label for="m-msg">Nachricht / Wunschtermin</label>
-          <textarea id="m-msg" name="message" placeholder="Fahrzeug, Wunschtermin, Fragen …"></textarea>
+          <textarea id="m-msg" name="message" placeholder="Fahrzeug, gewünschte Leistung, Wunschtermin …" style="min-height:90px;"></textarea>
         </div>
         <button type="submit" class="btn btn--yellow btn--full">
           <i class="fas fa-paper-plane"></i> Anfrage absenden
