@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krake Autoaufbereitung Hagen – Ihr Auto verdient Perfektion</title>
+    <meta name="description" content="Professionelle Autoaufbereitung in Hagen. Glanz, Schutz & Werterhalt in Meisterqualität. Schnell & zuverlässig. Jetzt Termin vereinbaren!">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-yellow: #FFC107; /* Modernes Gelb */
+            --primary-blue: #1E3A8A; /* Tiefes Blau */
+            --accent-yellow: #FFD54F; /* Helles Gelb */
+            --text-light: #ffffff;
+            --text-dark: #1a1a1a;
+            --background-light: #f5f5f5;
+            --gray-dark: #2c3e50;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            background-color: var(--background-light);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Nunito', sans-serif;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            margin-bottom: 0.8em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a2f6b 100%);
+            color: var(--text-light);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+        }
+
+        .header .logo {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2em;
+            font-weight: 900;
+            color: var(--primary-yellow);
+            letter-spacing: 1px;
+        }
+
+        .header .tagline {
+            font-size: 0.95em;
+            color: var(--accent-yellow);
+            margin-top: 5px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.75), rgba(30, 58, 138, 0.75)), url('https://via.placeholder.com/1920x800/1e3a8a/ffffff?text=Ihr+Auto+verdient+Perfektion') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            color: var(--primary-yellow);
+            font-size: 4em;
+            margin-bottom: 0.2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subline {
+            font-size: 1.5em;
+            margin-bottom: 2em;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, #FFD54F 100%);
+            color: var(--primary-blue);
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+        }
+
+        .usp-bar {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a2f6b 100%);
+            color: var(--text-light);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .usp-bar span {
+            margin: 0 20px;
+            display: inline-block;
+        }
+
+        .section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: white;
+        }
+
+        .section.dark {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a2f6b 100%);
+            color: var(--text-light);
+        }
+
+        .section.dark h2, .section.dark h3 {
+            color: var(--primary-yellow);
+        }
+
+        .section.light-bg {
+            background-color: var(--background-light);
+        }
+
+        .problem-solution-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .problem-solution-item {
+            flex: 1;
+            min-width: 300px;
+            max-width: 45%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: left;
+            border-top: 4px solid var(--primary-yellow);
+        }
+
+        .problem-solution-item.dark-bg {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a2f6b 100%);
+            color: var(--text-light);
+            border-top: 4px solid var(--primary-yellow);
+        }
+
+        .problem-solution-item.dark-bg h3 {
+            color: var(--primary-yellow);
+        }
+
+        .problem-solution-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .problem-solution-item li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .problem-solution-item li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-yellow);
+            font-weight: bold;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-yellow);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(30, 58, 138, 0.15);
+        }
+
+        .service-item i {
+            font-size: 3em;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .why-krake-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .why-krake-item {
+            text-align: left;
+            padding: 25px;
+            border-left: 4px solid var(--primary-yellow);
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .why-krake-item i {
+            color: var(--primary-blue);
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+
+        .why-krake-item h3 {
+            margin-top: 0;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-info-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 4px solid var(--primary-yellow);
+        }
+
+        .contact-info-item i {
+            font-size: 2.5em;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .contact-info-item h3 {
+            margin-top: 0;
+        }
+
+        .contact-info-item p {
+            margin: 5px 0;
+        }
+
+        .contact-info-item a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-yellow);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .opening-hours {
+            background-color: var(--primary-yellow);
+            color: var(--primary-blue);
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a2f6b 100%);
+            color: var(--text-light);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: var(--primary-yellow);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-content {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            .hero {
+                padding: 60px 20px;
+            }
+            .usp-bar span {
+                display: block;
+                margin: 8px 0;
+            }
+            .problem-solution-grid {
+                flex-direction: column;
+            }
+            .problem-solution-item {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">🚗 Krake Autoaufbereitung</div>
+            <div class="tagline">Hagen – Ihr Auto verdient Perfektion</div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Voller Einsatz rund um Ihr Auto!</h1>
+            <p class="subline">Professionelle Autoaufbereitung für Glanz, Schutz & Werterhalt.</p>
+            <a href="#contact" class="btn">Kostenlosen Beratungstermin vereinbaren</a>
+        </div>
+    </div>
+
+    <div class="usp-bar">
+        <div class="container">
+            <span><i class="fas fa-map-marker-alt"></i> Lokal in Hagen</span>
+            <span><i class="fas fa-tags"></i> Transparente Fixpreise</span>
+            <span><i class="fas fa-clock"></i> Mo-Fr 10-18 Uhr</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h2>Ist Ihr Auto noch ein Hingucker?</h2>
+            <p>Eine professionelle Autoaufbereitung ist empfehlenswert für jeden, der sein Auto besonders pflegen und den Wert erhalten möchte. Wir reinigen effektiv den Außen- und Innenraum Ihres Fahrzeugs und polieren Ihr Auto auf Hochglanz.</p>
+            <div class="problem-solution-grid">
+                <div class="problem-solution-item">
+                    <h3>Das Problem</h3>
+                    <ul>
+                        <li>Lackschäden & Kratzer</li>
+                        <li>Hartnäckige Verschmutzungen</li>
+                        <li>Unangenehme Gerüche</li>
+                        <li>Wertverlust des Fahrzeugs</li>
+                    </ul>
+                </div>
+                <div class="problem-solution-item dark-bg">
+                    <h3>Die Lösung</h3>
+                    <ul>
+                        <li>Professionelle Lackaufbereitung</li>
+                        <li>Tiefenreinigung innen & außen</li>
+                        <li>Ozonbehandlung gegen Gerüche</li>
+                        <li>Werterhalt & Wertsteigerung</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.2em; font-weight: 600;">Ob für die Leasingrückgabe, den Verkauf oder das eigene Wohlgefühl – wir bringen Ihr Auto zum Glänzen!</p>
+        </div>
+    </div>
+
+    <div class="section dark">
+        <div class="container">
+            <h2>Unsere Leistungen für Ihr Fahrzeug</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-car"></i>
+                    <h3>Außenaufbereitung</h3>
+                    <p>Handwäsche, Felgenreinigung, Profi-Frontscheibenversiegelung, Hartwachs, Maschinenglanzpolitur & Vollpolitur.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-spray-can"></i>
+                    <h3>Innenreinigung</h3>
+                    <p>Gründliches Saugen mit Druckluft, Polsterreinigung, Lederpflege, Dachhimmel-Reinigung & Ozonbehandlung.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-glass-alt"></i>
+                    <h3>Autoglas Service</h3>
+                    <p>Reparatur von Steinschlägen, Scheibenwechsel & professionelle Glastönung.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-paint-roller"></i>
+                    <h3>Lackreparatur</h3>
+                    <p>Kleine Kratzer, Dellen und Lackschäden beheben. Professionelle Kratzer- und Flugrost-Entfernung.</p>
+                </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.1em;">Mehraufwand für große Fahrzeuge (Van, Transporter usw.) nach Absprache.</p>
+        </div>
+    </div>
+
+    <div class="section light-bg">
+        <div class="container">
+            <h2>Warum Krake Autoaufbereitung die richtige Wahl ist</h2>
+            <div class="why-krake-grid">
+                <div class="why-krake-item">
+                    <i class="fas fa-award"></i>
+                    <h3>Meisterqualität & Erfahrung</h3>
+                    <p>Langjährige Expertise für perfekte Ergebnisse bei jedem Fahrzeug.</p>
+                </div>
+                <div class="why-krake-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Schnelle & flexible Termine</h3>
+                    <p>Wir passen uns Ihrem Zeitplan an. Mo-Fr 10-18 Uhr erreichbar.</p>
+                </div>
+                <div class="why-krake-item">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Transparente Fixpreise</h3>
+                    <p>Keine versteckten Kosten. Volle Kostenkontrolle von Anfang an.</p>
+                </div>
+                <div class="why-krake-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Persönlicher Service</h3>
+                    <p>Individuelle Beratung und Betreuung für Ihr Fahrzeug.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section dark" id="contact">
+        <div class="container">
+            <h2>Bereit für den neuen Glanz?</h2>
+            <p class="subline">Vereinbaren Sie jetzt Ihren persönlichen Termin.</p>
+
+            <div class="contact-info-grid">
+                <div class="contact-info-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Telefon</h3>
+                    <p><a href="tel:+4923313623020">02331 - 3623020</a></p>
+                    <p><a href="tel:+491794559223">0179 - 45 59 223</a></p>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>E-Mail</h3>
+                    <p><a href="mailto:saschakrake@web.de">saschakrake@web.de</a></p>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Adresse</h3>
+                    <p>Bülowstrasse 18</p>
+                    <p>58097 Hagen</p>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <h3 style="color: var(--primary-blue); margin-top: 0;">Kontaktformular</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ihre Nachricht / Wunschtermin</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Termin anfragen</button>
+                </form>
+            </div>
+
+            <div class="opening-hours">
+                <i class="fas fa-clock"></i> Öffnungszeiten: Mo - Fr 10:00 - 18:00 Uhr
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3 style="color: var(--primary-yellow); margin-top: 0;">Krake Autoaufbereitung</h3>
+                <p>Bülowstrasse 18 | 58097 Hagen</p>
+                <p>Tel.: 02331 - 3623020 | Mobil: 0179 - 45 59 223</p>
+                <p>E-Mail: saschakrake@web.de</p>
+            </div>
+            <p>&copy; 2026 Krake Autoaufbereitung. Alle Rechte vorbehalten.</p>
+            <p>
+                <a href="#impressum">Impressum</a> |
+                <a href="#datenschutz">Datenschutz</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Impressum & Datenschutz Modal/Section (vereinfacht) -->
+    <div style="display:none;" id="impressum">
+        <h2>Impressum</h2>
+        <p><strong>Krake Autoaufbereitung</strong><br>
+        Bülowstrasse 18<br>
+        58097 Hagen<br>
+        Tel.: 02331 - 3623020<br>
+        Mobil: 0179 - 45 59 223<br>
+        E-Mail: saschakrake@web.de</p>
+    </div>
+
+    <div style="display:none;" id="datenschutz">
+        <h2>Datenschutzerklärung</h2>
+        <p>Die Datenschutzerklärung wird in Übereinstimmung mit der DSGVO bereitgestellt. Kontaktdaten werden nur zur Bearbeitung von Anfragen verwendet und nicht an Dritte weitergegeben.</p>
+    </div>
+</body>
+</html>
